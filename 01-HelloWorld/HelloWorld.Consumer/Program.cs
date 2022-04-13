@@ -8,6 +8,7 @@ Console.WriteLine("RabbitMQ HelloWorld Model,Consumer!");
 
 using var connection = RabbitHelper.GetFactory().CreateConnection();
 using var channel = connection.CreateModel();
+
 channel.QueueDeclare(queue: "hello", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
 var consumer = new EventingBasicConsumer(channel);
