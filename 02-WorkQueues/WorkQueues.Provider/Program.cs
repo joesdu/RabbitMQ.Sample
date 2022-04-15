@@ -25,6 +25,3 @@ while (true && i < max)
     i++;
     Thread.Sleep(1000);
 }
-
-Console.WriteLine(" Press [enter] to exit.");
-Console.ReadLine();

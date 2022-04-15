@@ -22,7 +22,7 @@ consumer.Received += (model, ea) =>
     var body = ea.Body.ToArray();
     var message = Encoding.UTF8.GetString(body);
     Console.WriteLine($" [x] Consumer Received {message}");
-    var second = rand.Next(1, 3);
+    var second = rand.Next(1, 2);
     Thread.Sleep(second * 1000);
     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
 };
