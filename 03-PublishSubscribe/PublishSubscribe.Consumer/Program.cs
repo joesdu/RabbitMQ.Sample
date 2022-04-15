@@ -8,16 +8,19 @@ Console.WriteLine("RabbitMQ PublishSubscribe Model,Consumer!");
 
 using var connection = RabbitHelper.GetFactory().CreateConnection();
 using var channel = connection.CreateModel();
+
+# region 消费者中写这段内容是为了防止消费者先启动,造成异常
 // 创建一个fanout交换机
 channel.ExchangeDeclare(exchange: "fanout_exchange", type: ExchangeType.Fanout);
 // 创建几个队列
-//channel.QueueDeclare(queue: "fanout_queue1", durable: false, exclusive: false, autoDelete: false, arguments: null);
-//channel.QueueDeclare(queue: "fanout_queue2", durable: false, exclusive: false, autoDelete: false, arguments: null);
+channel.QueueDeclare(queue: "fanout_queue1", durable: false, exclusive: false, autoDelete: false, arguments: null);
+channel.QueueDeclare(queue: "fanout_queue2", durable: false, exclusive: false, autoDelete: false, arguments: null);
 channel.QueueDeclare(queue: "fanout_queue3", durable: false, exclusive: false, autoDelete: false, arguments: null);
 // 绑定队列到交换机
-//channel.QueueBind(queue: "fanout_queue1", exchange: "fanout_exchange", routingKey: "");
-//channel.QueueBind(queue: "fanout_queue2", exchange: "fanout_exchange", routingKey: "");
+channel.QueueBind(queue: "fanout_queue1", exchange: "fanout_exchange", routingKey: "");
+channel.QueueBind(queue: "fanout_queue2", exchange: "fanout_exchange", routingKey: "");
 channel.QueueBind(queue: "fanout_queue3", exchange: "fanout_exchange", routingKey: "");
+# endregion
 
 var consumer = new EventingBasicConsumer(channel);
 // 加个随机数让消费者慢慢消费.
@@ -32,7 +35,9 @@ consumer.Received += (model, ea) =>
     // 确认消费
     channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);    
 };
-// 这里我们消费第三个队列里的消息.
+// 消费队列里的消息.
+channel.BasicConsume(queue: "fanout_queue1", autoAck: false, consumer: consumer);
+channel.BasicConsume(queue: "fanout_queue2", autoAck: false, consumer: consumer);
 channel.BasicConsume(queue: "fanout_queue3", autoAck: false, consumer: consumer);
 
 Console.WriteLine(" Press [enter] to exit.");
