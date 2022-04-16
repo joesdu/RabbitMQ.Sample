@@ -3,21 +3,24 @@ using RabbitMQ.Client;
 using Sample.Common;
 using System.Text;
 
-Console.WriteLine("RabbitMQ HelloWorld Model,Provider!");
+Console.WriteLine("RabbitMQ WorkQueues Model,Producer!");
 
 using var connection = RabbitHelper.GetFactory().CreateConnection();
 using var channel = connection.CreateModel();
 
-channel.QueueDeclare(queue: "helloworld", durable: false, exclusive: false, autoDelete: false, arguments: null);
+channel.QueueDeclare(queue: "work_queue", durable: true, exclusive: false, autoDelete: false, arguments: null);
+
+var properties = channel.CreateBasicProperties();
+properties.Persistent = true;
 
 const int max = 30;
 int i = 0;
 while (true && i < max)
 {
-    var message = $"Hello World!{i}";
+    var message = $"Hello WorkQueues-{i}";
     var body = Encoding.UTF8.GetBytes(message);
 
-    channel.BasicPublish(exchange: "", routingKey: "helloworld", basicProperties: null, body: body);
+    channel.BasicPublish(exchange: "", routingKey: "work_queue", basicProperties: properties, body: body);
     Console.WriteLine($" [x] Sent {message}");
     i++;
     Thread.Sleep(1000);

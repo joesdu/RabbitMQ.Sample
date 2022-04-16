@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 using Sample.Common;
 using System.Text;
 
-Console.WriteLine("RabbitMQ Routing Model,Provider!");
+Console.WriteLine("RabbitMQ Routing Model,Producer!");
 
 using var connection = RabbitHelper.GetFactory().CreateConnection();
 using var channel = connection.CreateModel();

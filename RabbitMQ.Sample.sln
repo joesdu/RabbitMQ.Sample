@@ -7,33 +7,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-HelloWorld", "01-HelloWo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Common", "Sample.Common\Sample.Common.csproj", "{FB405D30-5539-4886-B7BB-6C583C0C24B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld.Provider", "01-HelloWorld\HelloWorld.Provider\HelloWorld.Provider.csproj", "{8C20643B-1D52-4FFD-BA4D-30977F84D7A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld.Producer", "01-HelloWorld\HelloWorld.Producer\HelloWorld.Producer.csproj", "{8C20643B-1D52-4FFD-BA4D-30977F84D7A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld.Consumer", "01-HelloWorld\HelloWorld.Consumer\HelloWorld.Consumer.csproj", "{01F641CD-DA98-4859-A3EC-6A398D1961E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-WorkQueues", "02-WorkQueues", "{29C80B87-23A5-4C67-8F69-6552504FE8EB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkQueues.Provider", "02-WorkQueues\WorkQueues.Provider\WorkQueues.Provider.csproj", "{DF4868A1-C012-47BB-8290-FFA1D6096554}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkQueues.Producer", "02-WorkQueues\WorkQueues.Producer\WorkQueues.Producer.csproj", "{DF4868A1-C012-47BB-8290-FFA1D6096554}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkQueues.Consumer", "02-WorkQueues\WorkQueues.Consumer\WorkQueues.Consumer.csproj", "{4D5DCACE-6BC8-47E3-81F6-27A2728844F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-PublishSubscribe", "03-PublishSubscribe", "{11475559-D12C-43FC-A581-020A4C764255}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublishSubscribe.Provider", "03-PublishSubscribe\PublishSubscribe.Provider\PublishSubscribe.Provider.csproj", "{BB39925A-38C9-4E0D-A0ED-D159631543EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublishSubscribe.Producer", "03-PublishSubscribe\PublishSubscribe.Producer\PublishSubscribe.Producer.csproj", "{BB39925A-38C9-4E0D-A0ED-D159631543EC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublishSubscribe.Consumer", "03-PublishSubscribe\PublishSubscribe.Consumer\PublishSubscribe.Consumer.csproj", "{7EE758D8-E9CA-4961-8E4B-74542D5E1091}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Routing", "04-Routing", "{9F1BB550-F0A8-4CB4-9340-40A563948BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing.Provider", "04-Routing\Routing.Provider\Routing.Provider.csproj", "{87F64033-CA9C-4615-84A0-194C414F033C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routing.Producer", "04-Routing\Routing.Producer\Routing.Producer.csproj", "{87F64033-CA9C-4615-84A0-194C414F033C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing.Consumer", "04-Routing\Routing.Consumer\Routing.Consumer.csproj", "{DF0DF13E-1B15-4BAC-94B6-EAA0D4C9FFC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routing.Consumer", "04-Routing\Routing.Consumer\Routing.Consumer.csproj", "{DF0DF13E-1B15-4BAC-94B6-EAA0D4C9FFC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Topics", "05-Topics", "{FF1DB53E-0889-4C27-91F9-8390FF270EC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topics.Provider", "05-Topics\Topics.Provider\Topics.Provider.csproj", "{A6EF898C-7BBD-4E2E-B0F2-ABD7BD2C5909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topics.Producer", "05-Topics\Topics.Producer\Topics.Producer.csproj", "{A6EF898C-7BBD-4E2E-B0F2-ABD7BD2C5909}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Topics.Consumer", "05-Topics\Topics.Consumer\Topics.Consumer.csproj", "{5255FB2C-A848-4C2A-8226-DC83B46F9E94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Topics.Consumer", "05-Topics\Topics.Consumer\Topics.Consumer.csproj", "{5255FB2C-A848-4C2A-8226-DC83B46F9E94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

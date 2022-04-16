@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 using Sample.Common;
 using System.Text;
 
-Console.WriteLine("RabbitMQ PublishSubscribe Model,Provider!");
+Console.WriteLine("RabbitMQ PublishSubscribe Model,Producer!");
 
 using var connection = RabbitHelper.GetFactory().CreateConnection();
 using var channel = connection.CreateModel();
